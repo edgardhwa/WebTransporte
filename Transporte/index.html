@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="../Style/Estilo.css">-->
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #imagem {
+            /*width: 400px;
+            height: 200px;*/
+            background-image: url(./imagem/onibus01.jpg);
+            background-repeat: no-repeat;
+            /*background-size: 82%;*/
+            background-size: cover;
+            background-color: #fff;
+            /*color: #000;*/
+            background-attachment: scroll;
+            background-position: left right;
+            /*eixo x eixo y*/
+            text-align: justify;
+
+            width: 1640px;
+            height: 1100px;
+
+        }
+        
+        .container {
+            display: grid;
+            height: 154vh;
+            /*width: 191.3vh;*/
+            /*width: 179.7vh;*/
+
+            grid-template-columns: 0.8fr 1.2fr 1.2fr 1.2fr 0.6fr;
+            grid-template-rows: 0.3fr 0fr 4fr 1.8fr 0.2fr 0.7fr 0.6fr;
+            /*0.2fr 1.8fr 4fr 1.8fr 0.2fr*/
+            grid-template-areas: "menuPrincipal menuPrincipal menuPrincipal menuPrincipal login"
+                "sidebar principal principal principal ladoDireito"
+                "sidebar conteudoEsquerdo conteudoCentral conteudoDireita ladoDireito"
+                "rodape rodape rodape rodape rodape";
+            grid-gap: 0.5em;
+
+            padding: 1px 200px 10px 20px;
+        }
+        /*
+        @media (max-width: 500px) {
+            .container {
+                background-color: aqua;
+                width: 300px;
+            }
+            #imagem {
+                
+            }
+        }*/
+
+        /*
+        position: absolute;
+      background-color: rgba(0,0,0,0.5);
+      color:#fff;
+      text-align: center;
+      top: 100px;
+      width: 250px;
+      line-height: 30px;
+      height: 30px;*/
+
+        .container .menu {
+            /*background-color: linen*/
+            /*display: flex; */
+            /*border: 1px solid grey;*/
+            /*justify-content: space-between;*/
+            /*align-items: center;*/
+        }
+
+        .menuPrincipal {
+            /*background-color: floralwhite;*/
+            grid-area: menuPrincipal;
+            border: 2px solid white;
+            /*border-radius: 7px;*/
+            /* width: 100%;*/
+            /*height: 60%;*/
+            height: 67%;
+            line-height: 20px;
+            /*min-width: 700px;*/
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0.8em;
+            margin-top: 5px;
+            position: relative;
+            left: 80px;
+        }
+
+        /*@media (min-width: 600px) and (max-width: 800px) {
+            .container {
+                background: aquamarine;
+            }
+        }*/
+        /*@media only screen and (max-width: 60px) {
+            .principal {
+                font-weight: bold;
+            }
+        }
+        @media (min-width: 400px) {
+            .sidebar {
+                background-color: cornsilk;
+            }
+        }*/
+
+        /*Em teste*/
+        /*.logo {
+            width: 70px;
+            height: 80px;
+            
+        }*/
+
+        .menu a {
+            text-decoration: none;
+            font-size: 18px;
+            margin-left: 20px;
+            margin-right: 18px;
+            padding: 6px;
+           /* color: rgba(235, 239, 243, 0.979);*/
+           color: darkblue;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .menu a:hover {
+            background-color: darkblue;
+            color: cornsilk;
+        }
+
+        /*Em teste*/
+        .menuPrincipal .logoMarca img {
+            /*width: 150px;*/
+            height: 140px;
+            margin-left: 30px;
+            padding: 8px;
+            display: flex;
+
+        }
+
+        .formLogin {
+            /*background-color: ghostwhite;*/
+
+            /*width: 155px;
+            height: 110px;*/
+
+            padding: 1em;
+            /*text-align: left;*/
+            border: 1px solid ghostwhite;
+            border-radius: 0.8em;
+
+            font-size: 13px;
+            font-weight: bold;
+            /*display: flex;*/
+            justify-content: center;
+            /**color: darkblue;**/
+            color: ghostwhite;
+            margin-top: 5px;
+            height: 53%;
+            position: relative;
+            left: 80px;
+        }
+        /*Estiliza o nome Acesso ao sistema.*/
+        .lbl_acessoSistema {
+            position: relative;
+            top: -11px;
+           font-family:'Times New Roman', Times, serif;
+           font-size: 16px;
+        }
+        /*Estiliza os campos */
+        .labelLogin, .labelSenha {
+            position: relative;
+            top: -11px;
+           font-family:'Times New Roman', Times, serif;
+           font-size: 12px;
+        }
+
+        .loginInput, .passwordInput {
+            position: relative;
+            top: -12.5px;
+        }
+
+        .botaoLogin {
+            position: relative;
+            top: -9px;
+        }
+
+        /*
+        .lbl_acessoSistema,
+        .labelLogin, .labelSenha,
+        .loginInput, .passwordInput,
+        .botaoLogin {
+            position: relative;
+            top: -13px;
+           */ /**18px;**/
+        /*}*/
+
+        .principal {
+            background-color: floralwhite;
+            grid-area: principal;
+            /*border: 1px solid grey;*/
+            border-radius: 0.8em;
+            padding: 0.3em;
+            font-size: 1.2em;
+            margin-top: -2em;
+            height: auto;
+            /*margin-left: -450px;
+            margin-right: 250px;*/
+            position: relative;
+            left: 80px;
+        }
+
+        /*@media (max-width: 500px) {
+            .principal {
+                width: 650px;
+            }
+        } */
+
+        /*.lateralEsquerda {
+            background-color: blue;
+            grid-area: lateralEsquerda;
+            margin-top: 80px;
+            border: 1px solid grey;
+            border-radius: 7px;
+            padding: 100px;
+            margin-top: 2px;
+        } */
+        .sidebar {
+            background-color: gainsboro;
+            grid-area: sidebar;
+            border: 1px solid grey;
+            border-radius: 0.8em;
+            padding: 0.3em;
+            /*width: 150px;*/
+            /*height: 40em;*/
+            margin-top: -2.4em;
+            position: relative;
+            left: 80px;
+        }
+
+
+        .conteudoEsquerdo {
+            background-color: khaki;
+            grid-area: conteudoEsquerdo;
+            border: 1px solid grey;
+            border-top-left-radius: 7px;
+            border-bottom-left-radius: 7px;
+            /*height: 25em;*/
+            padding: 0.3em;
+            position: relative;
+            left: 80px;
+        }
+
+        .conteudoCentral {
+            background-color: khaki;
+            grid-area: conteudoCentral;
+            border: 1px solid grey;
+            padding: 0.3em;
+            position: relative;
+            left: 80px;
+        }
+
+        .conteudoDireita {
+            background-color: khaki;
+            grid-area: conteudoDireita;
+            border: 1px solid grey;
+            border-top-right-radius: 7px;
+            border-bottom-right-radius: 7px;
+            padding: 0.3em;
+            position: relative;
+            left: 80px;
+        }
+
+        .ladoDireito {
+            background-color: lightcyan;
+            grid-area: ladoDireito;
+            border: 1px solid gray;
+            border-radius: 1em;
+            padding: 0.3em;
+            /*height: 40em;*/
+            margin-top: -1.4em;
+            position: relative;
+            top: -15px;
+            margin-bottom: -14px;
+            position: relative;
+            left: 80px;
+        }
+
+        .rodape {
+            background-color: honeydew;
+            grid-area: rodape;
+            border: 1px solid grey;
+            font-family: sans-serif;
+            border-radius: 0.5em;
+            clear: both;
+            height: 22px;
+            font-size: 13px;
+            padding: 0.1em;
+            line-height: 22px;
+            position: relative;
+            left: 80px;
+        }
+        /*
+        .rodape small p {
+            background-color: honeydew;
+            grid-area: rodape;
+            border: 1px solid grey;
+            font-family: sans-serif;
+            border-radius: 0.5em;
+            clear: both;
+            height: 22px;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 0.1em;
+            line-height: 22px;
+            position: relative;
+            left: -2px;
+            width: 1122px;
+        }
+        */
+
+        /*div{
+                display: block;
+                width: 400px;
+                margin: 5px 0;
+                text-align: right;
+                }*/
+        /*.logoMarca {
+            
+            width: 70px;
+            
+            
+            background-color: whitesmoke;
+           
+            border: 1px solid grey;
+            border-radius: 0.4em;
+        }*/
+        .campoFormInput,
+        .lbl_acessoSistema,
+        .labelLogin, .labelSenha,
+        .loginInput, .passwordInput {
+            /*display: flex;*/
+            position: relative;
+            left: -3px;
+
+        }
+        /*
+           .campoInput,
+        .lbl_acessoSistema,
+        .campoLogin,
+        .userInput {
+            /*display: flex;*/
+            position: relative;
+            left: -3px;
+
+        }*/
+
+        .campoFormLogin {
+            display: flex;
+            font-size: 14px;
+            text-decoration-line: underline;
+
+        }
+
+        
+        /*A div info que contem as informações de endereço
+        e contato.*/
+        .info {
+            border: 1px solid white;
+            border-radius: 1em;
+            padding: 0.8em;
+            color: honeydew;
+            /*width: 424%;*/
+            width: 456%;
+            /*margin-top: -7px;
+            min-height: -7px;
+            max-height: -4px;*/
+            position: relative;
+            top: -40px;
+            left: 79px;
+
+        }
+
+        /*tag h4 com os titulos de "Localização" e "Contato".*/
+        .local_01 {
+            /*font-size: 1.2em;*/
+            font-size: 22px;
+        }
+
+        /*Conteudo das informações que estão dentro dos
+        paragrafos de "Localização" e "Contato".*/
+       /* .infoContato {
+            font-family: sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            /**font-weight: 600;**/
+        /*}*/
+
+        #sobreNos a {
+            text-decoration: none;
+            color: blue;
+            font-family: sans-serif;
+            font-size: 16px;
+
+        }
+
+        footer p {
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: aliceblue;
+            position: relative;
+            top: 9px;
+           font-family:'Times New Roman', Times, serif;
+           font-size: 12px;
+        }
+        .info {
+            position: relative;
+            top: 20px;
+        }
+        /*
+        @media screen and (max-width: 500px) {
+            #imagem {
+                max-width: 750px;
+
+                height: 750px;
+            }
+        }
+        */
+        /*Primeira parte da media query funcionando correto.*/
+        @media screen and (max-width: 1100px) and (min-width: 800px) {
+            #imagem {
+                /*width: 488px;*/
+                /*width: 910px;*/
+                width: 1275px;
+                height: 1148px;
+            }
+
+            .container {
+                width: 350px;
+                /*480*/
+            }
+
+            /*Deu certo o media*/
+            .menuPrincipal {
+                width: 690px;
+                /*485*/
+                position: relative;
+                left: 187px;
+            }
+
+            /*Estiliza o nome "Acesso ao sistema do login.*/
+            .lbl_acessoSistema {
+                position: relative;
+                top: -13px;
+                font-size: 15px;
+            }
+           /* 
+            .campoLogin,
+            .userInput {
+                font-size: 12px;
+                position: relative;
+                left: 130px;
+            }
+
+            .campoInput,
+            .campoLogin,
+            .userInput {
+                position: relative;
+                /*left: auto;*/
+             /*   left: -0.5px;
+
+            }*/
+            /*Campo login da pagina.*/
+            .formLogin {
+                width: 135px;
+                height: 86px;
+                line-height: 16px;
+                position: relative;
+                right: 125px;
+                top: 1px;
+                left: 63px;
+            }
+
+            /*Estiliza tudo que esta dentro da tela de login.*/
+            .formLogin {
+                /*position: relative;
+                left: 120px;*/
+            }
+
+            .labelLogin, .labelSenha, 
+            .loginInput, .passwordInput {
+                position: relative;
+                left: -3px;
+            }
+
+            .loginInput, .passwordInput {
+                width: 140px;
+            }
+
+            .botaoLogin {
+                position: relative;
+                top: -10px;
+            }
+
+            .principal {
+              /*  width: 420px; /*aumentar a largura.*/
+                /*363px*/
+                width: 501px;
+                position: relative;
+                left: 121px;
+            }
+
+            .sidebar {
+                width: 169px;
+                height: auto;
+                position: relative;
+                left: 187px;
+                font-size: 15px;
+            }
+
+            .conteudoEsquerdo {
+                position: relative;
+                left: 120px;
+                top: -4px;
+                height: auto;
+                width: 159px;
+                font-size: 16px;
+            }
+
+            .conteudoCentral {
+                position: relative;
+                left: 102.5px;
+                top: -4px;
+                height: auto;
+                width: 159px;
+                font-size: 16px;
+            }
+
+            .conteudoDireita {
+                position: relative;
+                left: 83px;
+                top: -4px;
+                height: auto;
+                width: 159px;
+                font-size: 16px;
+            }
+
+            .ladoDireito {
+                width: 157px;
+                height: auto;
+                position: relative;
+                /*right: 130px;*/
+                left: 65px;
+                top: -18px;
+                font-size: 16px;
+            }
+
+            .rodape {
+                position: relative;
+                left: 189px;
+                width: 87.4%;
+                margin: 0px 124px 0 0px;
+            }
+
+            .info {
+                /*position: relative;*/
+                /*top: 10px;
+              border: 2px solid blue;
+              color: red;*/
+                /*visibility: hidden;*/
+                position: relative;
+                left: 189px;
+                top: 14px;
+                width: 351.5%;
+                color: blueviolet;
+            }
+
+            .info address, .info address a {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+               /*background-color: rgba(87, 117, 116, 0.979);*/
+            }
+
+            .info p, a {
+                position: relative;
+                left: 6px;
+            }
+            .info {
+                border:#fff;
+            }
+            .info h4 {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+            }
+
+
+        }
+        /*Segunda parte do media query funcionando.*/
+        /*--------------------------------------------------*/
+        @media screen and (max-width: 799px) and (min-width: 500px) {
+            #imagem {
+                /*width: 488px;*/
+                /*width: 910px;*/
+                width: 1275px;
+                height: 1148px;
+            }
+
+            .container {
+                width: 350px;
+                /*480*/
+            }
+
+            /*Deu certo o media*/
+            .menuPrincipal {
+                width: 600.5px;
+                /*485*/
+                position: relative;
+                left: 240px;
+            }
+
+            /*Estiliza o nome "Acesso ao sistema do login.*/
+            .lbl_acessoSistema {
+                position: relative;
+                top: -13px;
+                font-size: 15px;
+            }
+           /* 
+            .campoLogin,
+            .userInput {
+                font-size: 12px;
+                position: relative;
+                left: 130px;
+            }
+
+            .campoInput,
+            .campoLogin,
+            .userInput {
+                position: relative;
+                /*left: auto;*/
+             /*   left: -0.5px;
+
+            }*/
+            /*Campo login da pagina.*/
+            .formLogin {
+                width: 135px;
+                height: 86px;
+                line-height: 16px;
+                position: relative;
+                right: 125px;
+                top: 1px;
+                left: 100px;
+            }
+
+            /*Estiliza tudo que esta dentro da tela de login.*/
+            .formLogin {
+                /*position: relative;
+                left: 120px;*/
+            }
+
+            .labelLogin, .labelSenha, 
+            .loginInput, .passwordInput {
+                position: relative;
+                left: -3px;
+            }
+
+            .loginInput, .passwordInput {
+                width: 140px;
+            }
+
+            .botaoLogin {
+                position: relative;
+                top: -10px;
+            }
+
+            .principal {
+              /*  width: 420px; /*aumentar a largura.*/
+                /*363px*/
+                width: 414.5px;
+                position: relative;
+                left: 171.5px;
+            }
+
+            .sidebar {
+                width: 169px;
+                height: auto;
+                position: relative;
+                left: 238px;
+                font-size: 15px;
+            }
+
+            .conteudoEsquerdo {
+                position: relative;
+                left: 170.5px;
+                top: -4px;
+                height: auto;
+                width: 130px;
+                font-size: 16px;
+            }
+
+            .conteudoCentral {
+                position: relative;
+                left: 147.5px;
+                top: -4px;
+                height: auto;
+                width: 130px;
+                font-size: 16px;
+            }
+
+            .conteudoDireita {
+                position: relative;
+                left: 124.2px;
+                top: -4px;
+                height: auto;
+                width: 130px;
+                font-size: 16px;
+            }
+
+            .ladoDireito {
+                width: 157px;
+                height: auto;
+                position: relative;
+                /*right: 130px;*/
+                left: 101px;
+                top: -18px;
+                font-size: 16px;
+            }
+
+            .rodape {
+                position: relative;
+                left: 238px;
+                width: 84.5%;
+                margin: 0px 124px 0 0px;
+            }
+
+            .info {
+                /*position: relative;*/
+                /*top: 10px;
+              border: 2px solid blue;
+              color: red;*/
+                /*visibility: hidden;*/
+                position: relative;
+                left: 237px;
+                top: 14px;
+                width: 315.5%;
+                color: blueviolet;
+            }
+
+            .info address, .info address a {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+               /*background-color: rgba(87, 117, 116, 0.979);*/
+            }
+
+            .info p, a {
+                position: relative;
+                left: 6px;
+            }
+            .info {
+                border:#fff;
+            }
+            .info h4 {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+            }
+            .rodape small {
+                position: relative;
+                top: -2px;
+            }
+
+        }
+        /*--------------------------------------------------*/
+        /*Terceira parte do media query funcionando.*/
+        @media screen and (max-width: 580px) and (min-width: 350px) {
+           /* .container .menuPrincipal{
+                width: 460px;
+            }*/
+
+            #imagem {
+                /*width: 488px;*/
+                /*width: 910px;*/
+                width: 1275px;
+                height: 1230px;
+            }
+            
+            .container {
+                width: 350px;
+                /*480*/
+            } 
+
+            /*Deu certo o media*/
+            .menuPrincipal {
+                width: 460px;
+                /*485*/
+                position: relative;
+                left: 240px;
+                
+            }
+
+            /*Estiliza o nome "Acesso ao sistema do login.*/
+            .lbl_acessoSistema {
+                position: relative;
+                top: -13px;
+                font-size: 15px;
+            }
+           /* 
+            .campoLogin,
+            .userInput {
+                font-size: 12px;
+                position: relative;
+                left: 130px;
+            }
+
+            .campoInput,
+            .campoLogin,
+            .userInput {
+                position: relative;
+                /*left: auto;*/
+             /*   left: -0.5px;
+
+            }*/
+            /*Campo login da pagina.*/
+            .formLogin {
+                width: 135px;
+                height: 86px;
+                line-height: 16px;
+                position: relative;
+                right: 125px;
+                top: 1px;
+                left: 74.3px;
+            }
+
+            /*Estiliza tudo que esta dentro da tela de login.*/
+            .formLogin {
+                /*position: relative;
+                left: 120px;*/
+            }
+
+            .labelLogin, .labelSenha, 
+            .loginInput, .passwordInput {
+                position: relative;
+                left: -3px;
+            }
+
+            .loginInput, .passwordInput {
+                width: 140px;
+            }
+
+            .botaoLogin {
+                position: relative;
+                top: -10px;
+            }
+
+            .principal {
+              /*  width: 420px; /*aumentar a largura.*/
+                /*363px*/
+                width: 302px;
+                position: relative;
+                left: 142px;
+                color: blue;
+            }
+
+            .sidebar {
+                width: 140px;
+                height: auto;
+                position: relative;
+                left: 238px;
+                font-size: 15px;
+            }
+
+            .conteudoEsquerdo {
+                position: relative;
+                left: 141px;
+                top: -4px;
+                height: auto;
+                width: 92px;
+                font-size: 16px;
+                height: 350px;
+                
+            }
+
+            .conteudoCentral {
+                position: relative;
+                left: 119px;
+                top: -4px;
+                height: auto;
+                width: 92px;
+                font-size: 16px;
+                height: 350px;
+            }
+
+            .conteudoDireita {
+                position: relative;
+                left: 96.5px;
+                top: -4px;
+                height: auto;
+                width: 92px;
+                font-size: 16px;
+                height: 350px;
+                
+            }
+
+            .ladoDireito {
+                width: 152px;
+                height: auto;
+                position: relative;
+                /*right: 130px;*/
+                left: 74.7px;
+                top: -18px;
+                font-size: 16px;
+            }
+
+            .rodape {
+                position: relative;
+                left: 238px;
+                width: 78.9%;
+                margin: 0px 124px 0 0px;
+            }
+
+            .info {
+                /*position: relative;*/
+                /*top: 10px;
+              border: 2px solid blue;
+              color: red;*/
+                /*visibility: hidden;*/
+                position: relative;
+                left: 238px;
+                top: 14px;
+                width: 255.3%;
+                color: blueviolet;
+            }
+
+            .info address, .info address a {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+               /*background-color: rgba(87, 117, 116, 0.979);*/
+            }
+            .info p, a {
+                position: relative;
+                left: 6px;
+            }
+
+            .info {
+                border:#fff;
+            }
+            .info h4 {
+                color:maroon;
+                font-weight: bold;
+               font-family:'Times New Roman', Times, serif;
+               background-color: wheat;
+               position: relative;
+               width: 102%;
+               right: 10px;
+            }
+            .rodape small {
+                position: relative;
+                top: -2px;
+            }
+
+        }
+        /*--------------------------------------------------*/
+        @media print and (max-width: 500px) {
+            #imagem {
+                /*width: 470px;*/
+            }
+
+            .container {
+                /*width: 480px;*/
+            }
+        }
+        /*
+        @media screen and (max-width: 800px) and (min-width: 950px) {
+            .principal {
+                width: 11px;
+            }
+
+            #imagem {
+                width: 90px;
+            }
+        }
+
+        
+        @media screen and (max-width: 700px) and (min-width: 450px) {
+            .menuPrincipal {
+                position: relative;
+                left: 220px;
+                top: 2px;
+                width: 590px;
+            }
+            .login {
+                position: relative;
+                top: 2px;
+            }
+            .sidebar {
+                position: relative;
+                left: 220px;
+                top: -2px;
+                width: 147px;
+            }
+            .principal {
+                position: relative;
+                left: 135px;
+            }
+            .ladoDireito {
+                position: relative;
+                top: -17px;
+                width: 147px;
+            }
+            .conteudoEsquerdo {
+                position: relative;
+                left: 135px;
+                width: 130px;
+            }
+            .conteudoCentral {
+                position: relative;
+                left: 118px;
+                width: 130px;
+            }
+            .conteudoDireita {
+                position: relative;
+                left: 99px;
+                width: 130px;
+            }
+            .rodape {
+                position: absolute;
+                top: 940px;
+                left: 239px;
+                width: 752px;
+            }
+            small {
+                position: absolute;
+                top: 27px;
+                right: 213px;
+                left: 2px;
+                
+                
+            }
+        }*/
+    </style>
+    <!--Favicon-->
+    <link rel="shortcut icon"
+        href="https://americatourcuritiba.com.br/wp-content/uploads/2021/10/PACOTES-PARA-O-VALE-DO-ITAJAI-PACOTES-TURISTICOS-BARATOS-VIAGENS-PARA-MORRETES-PACOTES-DE-VIAGENS-EM-OFERTA-VANS-PARA-PASSEIOS-LOCACOES-LOCADORA-DE-VANS-EXECUTIVAS-COM-MOTORISTAS-1.png"
+        type="image/x-icon">
+    <title>Praticando grid e Flex</title>
+</head>
+<!--<div class="imagemFundo imgFundo">
+    <img src="" alt="">
+</div> -->
+
+<body>
+    <div id="imagem">
+        <header></header>
+        <main class="container">
+            <!--Div do menu principal-->
+
+            <header class="menuPrincipal">
+                <div class="logoMarca">
+                    <img class="logo"
+                        src="https://americatourcuritiba.com.br/wp-content/uploads/2021/10/PACOTES-PARA-O-VALE-DO-ITAJAI-PACOTES-TURISTICOS-BARATOS-VIAGENS-PARA-MORRETES-PACOTES-DE-VIAGENS-EM-OFERTA-VANS-PARA-PASSEIOS-LOCACOES-LOCADORA-DE-VANS-EXECUTIVAS-COM-MOTORISTAS-1.png"
+                        alt="America tour turismo">
+                </div>
+                <nav class="menu">
+                    <hr>
+                    <a href="#">Americatur</a>
+                    <a href="#">Serviços</a>
+                    <a href="#">Veiculos</a>
+                    <a href="Orcamento.html">Orçamento</a>
+                    <a href="#sobreNos" id="retornaSobreNos">Quem samos</a>
+                    <a href="faleConosco.html">Fale conosco</a>
+                    <hr>
+                </nav>
+            </header>
+            <form action="http://www.google.com.br" target="_blank">
+                <div class="formLogin">
+                    <span class="lbl_acessoSistema">Acesso ao sistema</span>
+                    <div class="campoFormLogin">
+                        <label class="labelLogin">Usuario:</label>
+                        <input class="loginInput" type="text" maxlength="18"
+                            placeholder="Digite seu usuario" />
+                        <label class="labelSenha">Senha:</label>
+                        <input class="passwordInput" type="password" maxlength="18"
+                            placeholder="Digita sua senha" />
+                    </div>
+                    <div class="botaoLogin">
+                        <input type="submit" value="Acessar">
+                        <input type="reset" value="Cancelar">
+                        <!--<a href="https://es.olx.com.br"><button>OLX</button></a>-->
+                    </div>
+                </div>
+            </form>
+
+            <article class="principal">
+                <h3>Sobre nós</h3>
+                <a href="#valores"></a>
+                <p class="paragrafoPrincipal">
+                    A America tour turismo é uma empresa de transporte e turismo de Passageiros em Vitória – ES que
+                    realiza diversos serviços,
+                    desde traslados, transfers, viagens e excursões. Dentre os serviços prestados é possível encontrar o
+                    de Aluguel de Ônibus,
+                    Aluguel de Micro-ônibus, Aluguel de Van, Transporte Executivo, Transporte de Funcionários,
+                    Fretamento, Terceirização de Frota,
+                    Turismo Receptivo e City Tour.
+                    Fundada em 11 de novembro de 2020 pelo Sr. Zezinho, atua no mercado de transporte e turismo no
+                    Estado do Espírito
+                    Santo, principalmente na Região Metropolitana da Grande Vitória. A empresa se desenvolveu
+                    rapidamente e ganhou novas proporções,
+                    o que lhe possibilitou condições de oferecer o que há de melhor no transporte e turismo de
+                    passageiros.
+                </p>
+                </a>
+            </article>
+            <!--<div class="lateralEsquerda">Lateral esquerda</div>-->
+            <aside class="sidebar">
+                <p> Em 2022, a America Tour Turismo iniciou suas atividades
+                    de transporte no ES com Sprinter personalizadas oferecendo
+                    que há de mais moderno e confortável aos passageiros.
+                </p>
+
+                <p> Oferencendo a melhor experiencia de aluguel de veiculos
+                    para garantir uma viagem tranquila e confortável
+                    a seus passageiros.
+                </p>
+                <p> Nos orgulhamos pelo respeito e preferencia na locação de Sprinter
+                    do estado do Espirito Santo.
+                </p>
+                <p> A América tour Turismo se orgulha de ser a mais respeitada
+                    empresa de locação de ônibus de turismo do Estado do Espírito Santo.
+                </p>
+                <p> Consciente das exigências do mercado e das expectativas de
+                    seus clientes, a América tour Turismo se compromete com a qualidade,
+                    oferecendo atendimento personalizado em todo o processo de locação.
+                    <!--Além de oferecer as Sprinter mais confortaveis para sua viagem.
+                    Além de oferecer a mais ampla e moderna frota de sprinter de turismo
+                    para fretamento no estado.-->
+                </p>
+                <p> Trabalhando constantemente e evoluindo com a finalidade de garantir
+                    um atendimendo de qualidade e excelencia no desempenho de seus serviços.
+                </p>
+            </aside>
+
+            <section class="conteudoEsquerdo">
+                <h4 id="sobreNos"><a href="#retornaSobreNos">Missão</a></h4>
+                <p>
+                    Ser uma empresa voltada para o crescimento e bem-estar
+                    dos seus colaboradores e clientes, a fim de manter o
+                    relacionamento humanizado, saudável e idôneo junto aos
+                    clientes, bem como a ética e o respeito. Oferecer
+                    excelência no atendimento, honrando prazos e garantindo
+                    qualidade na prestação de serviços de transporte de
+                    passageiros.
+                </p>
+            </section>
+            <section class="conteudoCentral">
+                <h4 id="sobreNos"><a href="#retornaSobreNos">Visão</a></h4>
+                <p>Manter e fortalecer a marca no mercado, atuando
+                    com responsabilidade para se destacar entre os
+                    mais respeitados fornecedores de serviços de
+                    transporte através da prestação de transporte e
+                    turismo de passageiros.
+                </p>
+            </section>
+            <section class="conteudoDireita">
+                <h4 id="sobreNos"><a href="#retornaSobreNos">Valores</a></h4>
+                <p>
+                    Promover a responsabilidade social, ajudando a comunidade
+                    na qual está inserida e prezar pela Transparência entre
+                    Clientes, Fornecedores e Parceiros.
+                </p>
+            </section>
+            <aside class="ladoDireito">
+                <p>
+                    Em 2022, a América tour Turismo foi a primeira empresa
+                    de transporte no ES a oferecer Sprinter com o que há
+                    de mais moderno e confortável aos seus passageiros.
+                </p>
+                <p>
+                    Mesmo sendo fundada em 2022 nos preocupamos em oferecer uma
+                    experiência excelente para que sua viagem seja tranquila e
+                    confortavel.
+                </p>
+                <p>
+                    A América tour turismo se orgulha por fazer parte de um pedacinho
+                    da vida de cada um de sesu passageiros proporcionando uma viagem
+                    com segurança, tranquildade e conforto. Nos comprometemos com a
+                    qualidade do atendimento com profissionais qualificados pronto para
+                    atende-los com respeito e pontualidade.
+                </p>
+                <p>
+                    Nos preocupamos com nossos passageiros e procuramos evoluir e melhorar
+                    nossos serviços para que possa ter uma otima viagem.
+                </p>
+            </aside>
+            <div class="info">
+                <h4 class="local_01">Contato:</h4>
+                <address>
+                    <p>Telefone: <a href="tel:+5527999998888">(27) 9 9999-8888</a></p>
+                </address>
+                <address>
+                    <p>E-mail: <a href="mailto:contato.vix@americatour.com.br">contato.vix@americatour.com.br</a></p>
+                </address>
+            </div>
+            <footer class="rodape">
+                Av. America, Jardim América - Cariacica
+                <small>
+                    <p>&copy; ®Todos os direitos resertados a America tour turismo®</p>
+                </small>
+            </footer>
+
+        </main>
+
+    </div>
+</body>
+
+</html>

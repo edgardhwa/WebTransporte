@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>--Formulário Contato--</title>
+
+    <!--   <link href="ContatoEstilo.css" rel="stylesheet" media="all" />
+    <script src="JavaScript1.js"></script>-->
+
+    <script>
+        function agradecimento(){
+            alert("Obrigado por deixar sua mensagem.\nSua mensagem e muito importante para nós.")
+        }
+
+        
+    </script>
+
+    <style>
+        body {
+            background-color:lightblue;
+        }
+        .formFaleConosco {
+            border: 2px solid gray;
+            border-radius: 8px;
+            width: 250px;
+            height: 380px;
+            background-color: aliceblue;
+            color: blue;
+            font-size: 16.5px;
+            font-family:'Times New Roman', Times, serif;
+            padding-left: 5px;
+            margin-left: 530px;
+            margin-top: 120px;
+            
+        }
+
+        .tituloFaleConosco {
+            color: cornflowerblue;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+
+        .observacao {
+            height: 210px;
+            width: 238.6px;
+            
+        }
+        .observacao:hover {
+            background-color: cornsilk;
+        }
+        .botaoEnviarContato {
+            /**div que envolve o botão enviar do formulario.**/
+            
+        }
+
+        .enviar {
+            background-color:azure;
+            color: blue;
+            font-weight: bold;
+        }
+        .enviar:hover {
+            background-color: cornflowerblue;
+            color: azure;
+        }
+
+        .nomeContato {
+            position: relative;
+            left: 16px;
+            width: 175px;
+        }
+        .nomeContato:hover {
+            background-color: cornsilk;
+        }
+        
+        .telefoneContato {
+            position: relative;
+            left: 3px;
+            width: 175px;
+        }
+        .telefoneContato:hover {
+            background-color: cornsilk;
+        }
+        
+        .emailContato {
+            position: relative;
+            left: 11px;
+            width: 175px;
+        }
+        .emailContato:hover {
+            background-color: cornsilk;
+        }
+        /*formFaleConosco / tituloFaleConosco*/
+        @media (max-width: 500px) {
+        .formFaleConosco {
+            position: relative;
+        }
+        .tituloFaleConosco {
+            
+        }
+    }
+                
+    </style>
+</head>
+
+<body>
+    <form name="formularioFaleConosco" class="formFaleConosco">
+
+        <h1 class="tituloFaleConosco">Entre em contato</h1>
+        <div class="faleConosco">
+        <label for="lbl_nome">Nome</label>
+        <input type="text" class="nomeContato" id="nomeid" placeholder="Informe seu nome" required="required" name="nome" />
+        
+        <label for="lbl_telefone">telefone</label>
+        <input type="tel" class="telefoneContato" id="telefoneid" placeholder="(xx) xxxx-xxxx" name="telefone" required />
+        
+        <label for="lbl_email">E-mail</label>
+        <input type="email" class="emailContato" id="emailid" placeholder="Informe seu e-mail" name="email" />
+        </div>
+
+        <label for="lbl_observacao">Observação: </label>
+        <textarea class="observacao" placeholder="Deixe sua mensagem."></textarea>
+        <div class="botaoEnviarContato">
+        <input type="submit" class="enviar" onclick="agradecimento();" value="Enviar mensagem" />
+        </div>
+    </form>
+</body>
+
+</html>

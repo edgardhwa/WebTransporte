@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function solicitarOrcamento() {
+            alert("Solicitação de orçamento enviada, aguarde o retorno em seu e-mail! \nAgradecemos pela preferencia e confiança em nosso trabalho!")
+        }
+
+        function cancelarOrcamento() {
+            if("inputNomeCliente" && "inputTelefoneCliente" && "inputCpfOrcamento" && "inputEmailOrcamento" == null)
+           
+            alert("Volte sempre!")
+        }  
+        function retornaPrincipal() {
+           
+        }
+       
+    </script>
+    <style>
+        body {
+            background-color: cornsilk;
+        }
+
+        .tituloOrcamento {
+            margin-left: 516px;
+        }
+        /*.tituloFormularioOrcamento {
+            margin-left: 497px;
+        } */
+        .tituloOrcamento {
+            position: relative;
+            right: 6.5px;
+            top: 57px;
+            /*top: 18px;*/
+            border: 2px solid gray;
+            border-radius: 6px;
+            line-height: 17px;
+            /*border-top-left-radius: 6px;
+            border-top-right-radius: 6px;
+            border-bottom-left-radius: 6px;
+            border-bottom-right-radius: 6px;*/
+            width: 310px;
+        }
+        .formOrcamento {
+            border: 2px solid gray;
+            border-radius: 7px;
+            padding: 5px;
+            font-family: sans-serif;
+            font-size: 15px;
+            width: 300px;
+            line-height: 0.7em;
+            background-color: antiquewhite;
+            margin-left: 510px;
+            position: relative;
+            top: 55px;
+        }
+
+        .lbl_formSolicitante {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 14px;
+
+        }
+
+        .tituloOrcamento {
+            color: gray;
+            font-family: sans-serif;
+        }
+
+        .lbl_nomeCliente {
+            position: relative;
+            top: 2px;
+        }
+
+        .inputNomeCliente {
+            position: relative;
+            left: 26px;
+            width: 190px;
+        }
+
+        .inputNomeCliente:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_telefoneCliente {
+            position: relative;
+            top: 3px;
+        }
+
+        .inputTelefoneCliente {
+            position: relative;
+            left: 9px;
+            width: 190px;
+        }
+
+        .inputTelefoneCliente:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_cpfFormOrcamento {
+            position: relative;
+            top: 5px;
+            left: 1px;
+            /*top: 24px;*/
+            /*right: 251px;*/
+        }
+
+        .inputCpfOrcamento {
+            position: relative;
+            left: 36px;
+            /*left: 80px;*/
+            width: 190px;
+        }
+
+        .inputCpfOrcamento:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_emailFormOrcamento {
+            position: relative;
+            /*top: 24px;*/
+            top: 24px;
+            right: 244px;
+            /*right: 200px;*/
+        }
+
+        .inputEmailOrcamento {
+            position: relative;
+            left: 80px;
+            width: 190px;
+        }
+
+        .inputEmailOrcamento:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_localSaida {
+            position: relative;
+            top: 24px;
+            right: 200px;
+        }
+
+        .inputLocalSaida {
+            position: relative;
+            left: 80px;
+            width: 190px;
+        }
+
+        .inputLocalSaida:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_localDestino {
+            position: relative;
+            top: 24px;
+            right: 199px;
+        }
+
+        .inputLocalDestino {
+            position: relative;
+            left: 80px;
+            width: 190px;
+        }
+
+        .inputLocalDestino:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_dataSaida {
+            position: relative;
+            top: 24px;
+            right: 199px;
+            /*left: -185px;*/
+
+        }
+
+        .inputDataSaida {
+            position: relative;
+            left: 114px;
+
+        }
+
+        .inputDataSaida:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .lbl_dataRetorno {
+            position: relative;
+            top: 22px;
+            right: 165px;
+        }
+
+        .inputDataRetorno {
+            position: relative;
+            left: 114px;
+        }
+
+        .inputDataRetorno:hover {
+            background-color: aliceblue;
+            color: midnightblue;
+            font-weight: 600;
+            font-family: sans-serif;
+        }
+
+        .botaoOrcamento {
+            /*div que os botões estão dentro.*/
+        }
+
+        .botaoOrcamentoSolicita {
+            font-weight: 600;
+
+        }
+
+        .botaoOrcamentoSolicita:hover {
+            background-color: aliceblue;
+            color: mediumblue;
+        }
+
+        .botaoOrcamentoCancelar {
+            font-weight: 600;
+        }
+
+        .botaoOrcamentoCancelar:hover {
+            background-color: aliceblue;
+            color: mediumblue;
+        }
+
+        .botaoOrcamento {
+            position: relative;
+            top: 2px;
+        }
+
+        .retonaPagina {
+            font-weight: 600px;
+        }
+        .retornaPagina:hover {
+            background-color: aliceblue;
+            color: mediumblue;
+        }
+       
+        .formOrcamento {
+            position: relative;
+            right: 55px;
+        }
+        .tituloOrcamento {
+            position: relative;
+            right: 60px;
+        }
+        @media (max-width: 800px) {
+            .tituloOrcamento {
+                min-width: 311px;
+                border: 2px solid gray;
+                border-radius: 6px;
+                line-height: 17px;
+                position: relative;
+                /*right: 330px;*/
+                left: -286px;
+                top: 57px;
+                color: red;
+            }
+            .formOrcamento {
+                position: relative;
+                right: 280px;
+                top: 55px;
+               
+            }
+        }
+        @media (max-width: 630px) {
+            .tituloOrcamento {
+                /*position: relative;
+                right: 21px;*/
+                min-width: 311px;
+                border: 2px solid gray;
+                border-radius: 6px;
+                line-height: 17px;
+                position: relative;
+                /*right: 15px;*/
+              /*right: 247px;*/
+                /*left: -  247px;*/
+               
+                left: -340px;
+                top: 57px;
+                color: blue;
+            }
+            .formOrcamento {
+                position: relative;
+                right: 334px;
+                top: 55px;
+            }
+        }
+        /*screen, print, spooth, all.
+        Ao definir @media (max-width:600px) assumi que ele e o all
+        ou default por padrão.*/
+        @media (max-width: 500px){
+            .tituloOrcamento {
+                /*position: relative;
+                right: 21px;*/
+                min-width: 311px;
+                border: 2px solid gray;
+                border-radius: 6px;
+                width: 305px;
+                line-height: 17px;
+                position: relative;
+                /*right: 15px;*/
+                /*right: 427px;*/
+                top: 57px;      
+                left: -427px;
+                color: darkorange;
+            }
+            /*O tamanho do formulario esta em 300px.*/
+            .formOrcamento {
+                position: relative;
+                right: 420px;
+                top: 55px;
+                height: 240px;
+               
+               
+            }
+
+        }
+    </style>
+    <title>Orçamento</title>
+</head>
+
+<body>
+    <div class="tituloOrcamento">
+        <h2 class="tituloFormularioOrcamento">Faça seu Orçamento conosco!</h2>
+    </div>
+    <form action="" method="post" class="formOrcamento">
+        <h3>Proposta de Orçamento:</h3>
+        <div class="formCamposInterno">
+
+
+            <label for="nomeSolicitante" class="lbl_nomeCliente">*Nome: </label>
+            <input type="text" class="inputNomeCliente" name="nomeCliente" placeholder="Informe seu nome" required />
+
+            <label for="telefoneOrcamento" class="lbl_telefoneCliente">*Telefone: </label>
+            <input type="text" class="inputTelefoneCliente" name="telefoneCliente" placeholder="(xx) xxxx-xxxx"
+                maxlength="9" required />
+
+            <label for="cpfOrcamento" class="lbl_cpfFormOrcamento">*CPF: </label>
+            <input type="text" class="inputCpfOrcamento" name="cpfCliente" placeholder="000.000.000-00" maxlength="14"
+                required />
+
+            <label for="emailOrcamento" class="lbl_emailFormOrcamento">*E-mail: </label>
+            <input type="text" class="inputEmailOrcamento" name="emailCliente" placeholder="E-mail para contato"
+                maxlength="37" required>
+
+            <label for="localSaidaOrcamento" class="lbl_localSaida">*Saida: </label>
+            <input type="text" class="inputLocalSaida" name="localSaida" placeholder="Local de saida">
+
+            <label for="localDestinoOrcamento" class="lbl_localDestino">*Destino: </label>
+            <input type="text" class="inputLocalDestino" name="localDestino" placeholder="Local de destino">
+
+            <label for="dataSaidaOrcamento" class="lbl_dataSaida">*Data Saida: </label>
+            <input type="datetime-local" class="inputDataSaida" name="data">
+
+            <label for="dataRetornoOrcamento" class="lbl_dataRetorno">*Data Retorno: </label>
+            <input type="datetime-local" class="inputDataRetorno" name="data">
+        </div>
+
+        <div class="botaoOrcamento">
+            <input type="submit" class="botaoOrcamentoSolicita" onclick="solicitarOrcamento()"
+                value="Solicitar orçamento">
+            <input type="reset" class="botaoOrcamentoCancelar" onclick="cancelarOrcamento()" value="Cancelar">
+            <input type="button" value="Retornar" class="retornaPagina">
+        </div>
+    </form>
+</body>
+
+</html>
